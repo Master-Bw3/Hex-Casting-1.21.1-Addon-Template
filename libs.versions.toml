@@ -44,7 +44,8 @@ accessories        = "1.1.0-beta.53+1.21.1"
 owoLib-fabric   = "0.12.15.4+1.21"
 owoLib-neoforge = "0.12.15-beta.5+1.21"
 
-fzzyConfig = "0.7.6+1.21"
+fzzyConfig-fabric   = "0.7.6+1.21"
+fzzyConfig-neoforge = "0.7.6+1.21+neoforge"
 
 # other dependencies
 modPublish = "0.5.1"
@@ -99,7 +100,8 @@ caelus-neoforge = { module="com.illusivesoulworks.caelus:caelus-neoforge", versi
 owoLib-fabric   = { module="io.wispforest:owo-lib", version.ref="owoLib-fabric"}
 owoLib-neoforge = { module="io.wispforest:owo-lib-neoforge", version.ref="owoLib-neoforge"}
 
-fzzyConfig = { module="me.fzzyhmstrs:fzzy_config", version.ref="fzzyConfig"}
+fzzyConfig-fabric = { module="me.fzzyhmstrs:fzzy_config", version.ref="fzzyConfig-fabric"}
+fzzyConfig-neoforge = { module="me.fzzyhmstrs:fzzy_config", version.ref="fzzyConfig-neoforge"}
 
 [plugins]
 kotlin-jvm = { id="org.jetbrains.kotlin.jvm", version.ref="kotlin" }

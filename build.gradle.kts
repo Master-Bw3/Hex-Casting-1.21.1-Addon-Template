@@ -120,7 +120,7 @@ cloche {
 
             modImplementation(libs.modMenu)
             modImplementation(libs.owoLib.fabric)
-            modImplementation(libs.fzzyConfig)
+            modImplementation(libs.fzzyConfig.fabric)
         }
 
         metadata {
@@ -164,7 +164,7 @@ cloche {
             modRuntimeOnly(libs.architectury.neoforge)
 
             modImplementation(libs.owoLib.neoforge)
-            modImplementation(libs.fzzyConfig)
+            modImplementation(libs.fzzyConfig.neoforge)
         }
 
         runs {
