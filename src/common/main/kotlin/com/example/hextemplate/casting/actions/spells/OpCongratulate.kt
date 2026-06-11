@@ -27,7 +27,7 @@ object OpCongratulate : SpellAction {
     private data class Spell(val target: Entity) : RenderedSpell {
         // IMPORTANT: do not throw mishaps in this method! mishaps should ONLY be thrown in SpellAction.execute
         override fun cast(env: CastingEnvironment) {
-            env.printMessage("text.hexTemplate.congrats".asTranslatedComponent(target.displayName!!))
+            env.printMessage("text.hextemplate.congrats".asTranslatedComponent(target.displayName!!))
         }
     }
 }

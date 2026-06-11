@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     alias(libs.plugins.cloche)
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.yamlang)
 }
 
 group = "com.example.hextemplate"
@@ -196,6 +197,24 @@ tasks.withType<KotlinCompile>().configureEach {
         )
     }
 }
+
+
+// yaml language files
+// https://github.com/Fallen-Breath/yamlang/tree/master
+yamlang {
+    val subdirectories: List<String> = rootProject
+        .file("src/common/main/resources/assets/hexcasting/patchouli_books/thehexbook")
+        .walkTopDown()
+        .filter(File::isDirectory)
+        .filter { it != rootDir }
+        .map { it.relativeTo(rootProject.file("src/common/main/resources")).invariantSeparatorsPath }
+        .toList()
+
+    targetSourceSets = listOf(sourceSets["fabric1211"], sourceSets["neoforge1211"])
+    directories = subdirectories + "assets/hextemplate/lang"
+    owolibRichTranslations = true
+}
+
 
 // workaround for https://github.com/terrarium-earth/cloche/issues/150
 tasks.named("runFabric1211Data") {

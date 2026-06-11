@@ -49,6 +49,7 @@ fzzyConfig-neoforge = "0.7.6+1.21+neoforge"
 
 # other dependencies
 modPublish = "0.5.1"
+yamlang = "5944d3e"
 
 [bundles]
 cardinalComponents = ["cardinalComponents-base", "cardinalComponents-entity", "cardinalComponents-item", "cardinalComponents-block"]
@@ -107,3 +108,4 @@ fzzyConfig-neoforge = { module="me.fzzyhmstrs:fzzy_config", version.ref="fzzyCon
 kotlin-jvm = { id="org.jetbrains.kotlin.jvm", version.ref="kotlin" }
 modPublish = { id="me.modmuss50.mod-publish-plugin", version.ref="modPublish" }
 cloche = { id="earth.terrarium.cloche", version.ref="cloche"}
+yamlang = { id = "me.fallenbreath.yamlang", version.ref = "yamlang" }
