@@ -98,7 +98,9 @@ cloche {
         minecraftVersion = libs.versions.minecraft
 
         mixins.from(file("src/fabric/1.21.1/hextemplate-fabric.mixins.json"))
+        datagenDirectory = file("src/common/main/generated")
         includedClient()
+        data()
 
         mappings {
             official()
@@ -132,6 +134,10 @@ cloche {
                 value = "com.example.hextemplate.client.FabricHexTemplateClient"
                 adapter = "kotlin"
             }
+            entrypoint("fabric-datagen") {
+                value = "com.example.hextemplate.datagen.FabricHexTemplateDatagen"
+                adapter = "kotlin"
+            }
         }
 
         runs {
@@ -139,6 +145,7 @@ cloche {
                 jvmArguments.add("-XX:+AllowEnhancedClassRedefinition")
             }
             server()
+            data()
         }
     }
 
@@ -147,6 +154,8 @@ cloche {
         minecraftVersion = libs.versions.minecraft
 
         mixins.from(file("src/neoforge/1.21.1/hextemplate-neoforge.mixins.json"))
+        datagenDirectory = file("src/common/main/generated")
+        data()
 
         mappings {
             official()
@@ -172,6 +181,7 @@ cloche {
                 jvmArguments.add("-XX:+AllowEnhancedClassRedefinition")
             }
             server()
+            data()
         }
     }
 }
@@ -187,3 +197,19 @@ tasks.withType<KotlinCompile>().configureEach {
     }
 }
 
+// workaround for https://github.com/terrarium-earth/cloche/issues/150
+tasks.named("runFabric1211Data") {
+    enabled = false
+}
+tasks.named("prepareFabric1211DataRun") {
+    dependsOn(tasks.named("runNeoforge1211Data"))
+}
+
+// disable the default compile tasks so the build task works properly
+// (cloche doesn't use them to build the jars)
+tasks.named("compileKotlin") {
+    enabled = false
+}
+tasks.named("compileJava") {
+    enabled = false
+}

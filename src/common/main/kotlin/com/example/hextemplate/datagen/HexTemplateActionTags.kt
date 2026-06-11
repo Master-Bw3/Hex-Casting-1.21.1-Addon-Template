@@ -10,19 +10,18 @@ import net.minecraft.data.tags.TagsProvider
 import java.util.concurrent.CompletableFuture
 
 // see also: https://github.com/FallingColors/HexMod/blob/871f9387a3e1ccf0231a3e90c31e5d8472d46fde/Common/src/main/java/at/petrak/hexcasting/datagen/tag/HexActionTagProvider.java#L18
-// (ignore the "ersatzActionTag" part, it doesn't seem to be necessary anymore)
 class HexTemplateActionTags(
     output: PackOutput,
     provider: CompletableFuture<HolderLookup.Provider>,
 ) : TagsProvider<ActionRegistryEntry>(output, HexRegistries.ACTION, provider) {
     override fun addTags(provider: HolderLookup.Provider) {
-//        // per-world great spells
-//        for (entry in arrayOf(
-//            HexTemplateActions.GREAT_CONGRATULATE,
-//        )) {
-//            tag(HexTags.Actions.CAN_START_ENLIGHTEN).add(entry.key)
-//            tag(HexTags.Actions.PER_WORLD_PATTERN).add(entry.key)
-//            tag(HexTags.Actions.REQUIRES_ENLIGHTENMENT).add(entry.key)
-//        }
+        // per-world great spells
+        for (entry in arrayOf(
+            HexTemplateActions.GREAT_CONGRATULATE,
+        )) {
+            tag(HexTags.Actions.CAN_START_ENLIGHTEN).add(entry.key)
+            tag(HexTags.Actions.PER_WORLD_PATTERN).add(entry.key)
+            tag(HexTags.Actions.REQUIRES_ENLIGHTENMENT).add(entry.key)
+        }
     }
 }

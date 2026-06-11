@@ -8,15 +8,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent
 object ForgeHexTemplateDatagen {
     fun init(event: GatherDataEvent) {
         event.apply {
-            // common datagen
-            if (System.getProperty("hexTemplate.common-datagen") == "true") {
-                // TODO: add datagen providers
-            }
-
-            // Forge-only datagen
-            if (System.getProperty("hexTemplate.forge-datagen") == "true") {
-                addVanillaProvider(includeServer()) { HexTemplateActionTags(it, lookupProvider) }
-            }
+            addVanillaProvider(includeServer()) { HexTemplateActionTags(it, lookupProvider) }
         }
     }
 }
