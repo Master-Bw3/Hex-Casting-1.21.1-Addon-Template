@@ -8,3 +8,4 @@ object ForgeHexTemplateServer {
         HexTemplate.initServer()
     }
 }
+
