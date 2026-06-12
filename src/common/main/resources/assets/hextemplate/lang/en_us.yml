@@ -2,13 +2,13 @@ hextemplate:
   book:
     patterns:
       spells:
-        example_spells:
+        hextemplate_spells:
           .: "Example Spells"
           congratulate: "Remove an entity from the stack, then congratulate them."
       great_spells:
-        example_great_spells:
+        hextemplate_great_spells:
           .: "Example Great Spells"
-          "congratulate/great": "Same as $(l:patterns/spells/example_spells#hextemplate:congratulate)$(action)Congratulate/$, but as a great spell."
+          "congratulate/great": "Same as $(l:patterns/spells/hextemplate_spells#hextemplate:congratulate)$(action)Congratulate/$, but as a great spell."
 
 hexcasting:
   action:

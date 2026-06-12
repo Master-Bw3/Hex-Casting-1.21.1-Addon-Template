@@ -9,10 +9,11 @@ let
     stdenv.cc.cc.lib
   ];
 in pkgs.mkShell {
-  name = "trickster";
+  name = "hextemplate";
 
   buildInputs = with pkgs; [
     uv
+    python312
     git
     jetbrains.jdk-21
   ] ++ libs;

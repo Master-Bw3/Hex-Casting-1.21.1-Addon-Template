@@ -1,14 +1,20 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import at.petrak.pkpcpbp.filters.FlatteningJson5Transmogrifier
+import at.petrak.pkpcpbp.filters.Json5Transmogrifier
 
 plugins {
     alias(libs.plugins.cloche)
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.yamlang)
+    alias(libs.plugins.pkJson5)
 }
 
-group = "com.example.hextemplate"
-version = "1.0.0"
+val modVersion: String by project
+val mavenGroup: String by project
+
+version = modVersion
+group = mavenGroup
 
 kotlin {
     jvmToolchain(21)
@@ -213,6 +219,21 @@ yamlang {
     targetSourceSets = listOf(sourceSets["fabric1211"], sourceSets["neoforge1211"])
     directories = subdirectories + "assets/hextemplate/lang"
     owolibRichTranslations = true
+}
+
+// https://github.com/gamma-delta/PKPCPBP/blob/786194a590/src/main/java/at/petrak/pkpcpbp/PKSubprojPlugin.java#L84
+tasks.withType<ProcessResources>().configureEach {
+    outputs.upToDateWhen { false }
+
+    filesMatching(listOf("assets/**/*.flatten.json5", "data/**/*.flatten.json5")) {
+        path = path.replace(".flatten.json5", ".json")
+        filter<FlatteningJson5Transmogrifier>()
+    }
+
+    filesMatching(listOf("assets/**/*.json5", "data/**/*.json5")) {
+        path = path.replace(".json5", ".json")
+        filter<Json5Transmogrifier>()
+    }
 }
 
 
