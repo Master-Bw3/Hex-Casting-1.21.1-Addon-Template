@@ -1,0 +1,9 @@
+package {{ kotlin_package }}
+
+import net.fabricmc.api.DedicatedServerModInitializer
+
+object Fabric{{ classname }}Server : DedicatedServerModInitializer {
+    override fun onInitializeServer() {
+        {{ classname }}.initServer()
+    }
+}

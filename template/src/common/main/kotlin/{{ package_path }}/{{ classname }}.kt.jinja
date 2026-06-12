@@ -1,0 +1,31 @@
+package {{ kotlin_package }}
+
+import {{ kotlin_package }}.config.{{ classname }}Configs
+import net.minecraft.resources.ResourceLocation
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
+import {{ kotlin_package }}.networking.{{ classname }}Networking
+import {{ kotlin_package }}.registry.{{ classname }}Actions
+
+object {{ classname }} {
+    const val MODID = "{{ modid }}"
+
+    @JvmField
+    val LOGGER: Logger = LogManager.getLogger(MODID)
+
+
+
+    @JvmStatic
+    fun id(path: String): ResourceLocation = ResourceLocation.fromNamespaceAndPath(MODID, path)
+
+    fun init() {
+        initRegistries(
+            {{ classname }}Actions,
+        )
+        {{ classname }}Networking.init()
+        {{ classname }}Configs.init()
+    }
+
+    fun initServer() {
+    }
+}

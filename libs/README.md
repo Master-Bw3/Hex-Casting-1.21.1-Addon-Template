@@ -1,1 +1,0 @@
-Put jars for dependencies that aren't on a maven in this folder.

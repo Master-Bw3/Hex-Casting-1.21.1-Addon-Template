@@ -1,0 +1,21 @@
+# copier-template-tester configuration and default answers
+
+[defaults]
+modid = "hextemplate"
+github_user = "Example"
+classname = "HexTemplate"
+display_name = "Hex Template"
+mod_version = "1.0.0"
+
+[output.".ctt/default"]
+
+[output.".ctt/leading_number_username"]
+github_user = "1leadingnum"
+
+[output.".ctt/different_name"]
+modid = "hex_server"
+github_user = "Master-Bw3"
+classname = "HexServer"
+display_name = "Hex Server"
+mod_version = "1.0.0"
+

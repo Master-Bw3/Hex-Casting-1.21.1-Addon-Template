@@ -1,0 +1,11 @@
+package {{ kotlin_package }}.config
+
+import {{ kotlin_package }}.{{ classname }}
+import me.fzzyhmstrs.fzzy_config.config.Config
+
+// guide: https://moddedmc.wiki/en/project/fzzy-config/latest/docs/config-design/New-Configs#2-config-creation
+class {{ classname }}ClientConfig : Config({{ classname }}.id("client_config")) {
+
+    var testValue = 2.0
+
+}

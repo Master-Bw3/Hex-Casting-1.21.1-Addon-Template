@@ -1,0 +1,8 @@
+package {{ kotlin_package }}.networking.msg
+
+@JvmRecord
+data class MsgExampleS2C(val payload: Int) : {{ classname }}MessageS2C {
+   companion object : {{ classname }}MessageCompanion<MsgExampleS2C> {
+       override val type = MsgExampleS2C::class.java
+   }
+}

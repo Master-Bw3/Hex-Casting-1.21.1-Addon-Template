@@ -1,0 +1,54 @@
+package {{ kotlin_package }}.networking.msg
+
+import {{ kotlin_package }}.{{ classname }}
+import {{ kotlin_package }}.networking.{{ classname }}Networking
+import {{ kotlin_package }}.networking.handler.applyOnClient
+import {{ kotlin_package }}.networking.handler.applyOnServer
+import io.wispforest.owo.network.ClientAccess
+import io.wispforest.owo.network.OwoNetChannel
+import io.wispforest.owo.network.ServerAccess
+import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.server.level.ServerPlayer
+
+sealed interface {{ classname }}Message
+
+sealed interface {{ classname }}MessageC2S : {{ classname }}Message {
+    fun <T> T.sendToServer() where T : Record {
+        {{ classname }}Networking.CHANNEL.clientHandle().send(this)
+    }
+}
+
+sealed interface {{ classname }}MessageS2C : {{ classname }}Message {
+}
+
+fun <T> T.sendToPlayer(player: ServerPlayer) where T : Record {
+    {{ classname }}Networking.CHANNEL.serverHandle(player).send( this)
+}
+
+fun <T> T.sendToPlayers(players: Iterable<ServerPlayer>) where T : Record {
+    players.forEach { sendToPlayer(it) }
+}
+
+sealed interface {{ classname }}MessageCompanion<T> where T : {{ classname }}Message, T : Record {
+    val type: Class<T>
+
+    fun apply(msg: T, access: ServerAccess): Unit {
+        {{ classname }}.LOGGER.debug("Server received packet from {}: {}", access.player().name.string, this)
+        when (msg) {
+            is {{ classname }}MessageC2S -> msg.applyOnServer(access)
+            else -> {{ classname }}.LOGGER.warn("Message not handled on server: {}", msg::class)
+        }
+    }
+
+    fun apply(msg: T, access: ClientAccess): Unit {
+        {{ classname }}.LOGGER.debug("Client received packet: {}", this)
+        when (msg) {
+            is {{ classname }}MessageS2C -> msg.applyOnClient(access)
+            else -> {{ classname }}.LOGGER.warn("Message not handled on client: {}", msg::class)
+        }
+    }
+
+    fun register(channel: OwoNetChannel) {
+        channel.registerServerbound(type) { msg, access -> apply(msg, access) }
+    }
+}

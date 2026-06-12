@@ -9,15 +9,14 @@ let
     stdenv.cc.cc.lib
   ];
 in pkgs.mkShell {
-  name = "hextemplate";
+  name = "{{ modid }}";
 
   buildInputs = with pkgs; [
     uv
-    python313
-    python313Packages.copier-template-tester
-    python313Packages.pydantic
-    python313Packages.pydantic-core
-    copier
+    python312
+    python312Packages.pydantic
+    python312Packages.pydantic-core
+    python312Packages.copier
     git
     jetbrains.jdk-21
   ] ++ libs;

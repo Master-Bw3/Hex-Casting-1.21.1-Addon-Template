@@ -1,0 +1,10 @@
+package {{ kotlin_package }}.client
+
+import {{ kotlin_package }}.client.{{ classname }}Client
+import net.fabricmc.api.ClientModInitializer
+
+object Fabric{{ classname }}Client : ClientModInitializer {
+    override fun onInitializeClient() {
+        {{ classname }}Client.init()
+    }
+}

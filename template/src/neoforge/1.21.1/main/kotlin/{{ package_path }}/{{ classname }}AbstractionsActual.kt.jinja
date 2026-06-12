@@ -1,0 +1,15 @@
+@file:JvmName("{{ classname }}AbstractionsActual")
+
+package {{ kotlin_package }}
+
+import {{ kotlin_package }}.registry.{{ classname }}Registrar
+import net.msrandom.multiplatform.annotations.Actual
+import net.neoforged.neoforge.registries.RegisterEvent
+
+actual fun <T : Any> initRegistry(registrar: {{ classname }}Registrar<T>) {
+        NeoForge{{ classname }}.container.eventBus!!.addListener { event: RegisterEvent ->
+            event.register(registrar.registryKey) { helper ->
+                registrar.init(helper::register)
+            }
+        }
+}

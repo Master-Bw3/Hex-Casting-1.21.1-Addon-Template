@@ -1,0 +1,13 @@
+@file:JvmName("{{ classname }}Abstractions")
+
+package {{ kotlin_package }}
+
+import {{ kotlin_package }}.registry.{{ classname }}Registrar
+
+fun initRegistries(vararg registries: {{ classname }}Registrar<*>) {
+    for (registry in registries) {
+        initRegistry(registry)
+    }
+}
+
+expect fun <T : Any> initRegistry(registrar: {{ classname }}Registrar<T>)

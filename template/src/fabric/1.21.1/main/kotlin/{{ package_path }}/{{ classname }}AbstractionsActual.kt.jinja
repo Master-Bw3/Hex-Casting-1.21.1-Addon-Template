@@ -1,0 +1,12 @@
+@file:JvmName("{{ classname }}AbstractionsActual")
+
+package {{ kotlin_package }}
+
+import {{ kotlin_package }}.registry.{{ classname }}Registrar
+import net.minecraft.core.Registry
+import net.msrandom.multiplatform.annotations.Actual
+
+actual fun <T : Any> initRegistry(registrar: {{ classname }}Registrar<T>) {
+    val registry = registrar.registry
+    registrar.init { id, value -> Registry.register(registry, id, value) }
+}

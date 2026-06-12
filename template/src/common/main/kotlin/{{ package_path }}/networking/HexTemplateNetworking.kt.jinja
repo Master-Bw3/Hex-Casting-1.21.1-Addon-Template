@@ -1,0 +1,15 @@
+package {{ kotlin_package }}.networking
+
+import {{ kotlin_package }}.{{ classname }}
+import {{ kotlin_package }}.networking.msg.{{ classname }}MessageCompanion
+import io.wispforest.owo.network.OwoNetChannel
+
+object {{ classname }}Networking {
+    val CHANNEL: OwoNetChannel = OwoNetChannel.create({{ classname }}.id("networking_channel"))
+
+    fun init() {
+        for (subclass in {{ classname }}MessageCompanion::class.sealedSubclasses) {
+            subclass.objectInstance?.register(CHANNEL)
+        }
+    }
+}

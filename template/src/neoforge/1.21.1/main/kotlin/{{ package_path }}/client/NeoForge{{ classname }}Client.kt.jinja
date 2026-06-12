@@ -1,0 +1,13 @@
+package {{ kotlin_package }}.client
+
+import {{ kotlin_package }}.client.{{ classname }}Client
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory
+import thedarkcolour.kotlinforforge.neoforge.forge.LOADING_CONTEXT
+
+object NeoForge{{ classname }}Client {
+    @Suppress("UNUSED_PARAMETER")
+    fun init(event: FMLClientSetupEvent) {
+        {{ classname }}Client.init()
+    }
+}
