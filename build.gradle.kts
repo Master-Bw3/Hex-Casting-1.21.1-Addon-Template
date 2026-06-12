@@ -101,6 +101,15 @@ cloche {
             // the parts of mods that are the same in all sourceSets
             // will automatically be available in the common sourceSet
         }
+
+        metadata {
+            dependencies {
+                dependency {
+                    modId = "hexcasting"
+                    version(libs.versions.hexcasting.get())
+                }
+            }
+        }
     }
 
     fabric("fabric:1.21.1") {
@@ -148,6 +157,16 @@ cloche {
                 value = "io.github.example.hextemplate.datagen.FabricHexTemplateDatagen"
                 adapter = "kotlin"
             }
+            dependencies {
+                dependency {
+                    modId = "owo"
+                    version(libs.versions.owoLib.fabric.get())
+                }
+                dependency {
+                    modId = "fzzy_config"
+                    version(libs.versions.fzzyConfig.fabric.get())
+                }
+            }
         }
 
         runs {
@@ -184,6 +203,19 @@ cloche {
 
             modImplementation(libs.owoLib.neoforge)
             modImplementation(libs.fzzyConfig.neoforge)
+        }
+
+        metadata {
+            dependencies {
+                dependency {
+                    modId = "owo"
+                    version(libs.versions.owoLib.neoforge.get())
+                }
+                dependency {
+                    modId = "fzzy_config"
+                    version(libs.versions.fzzyConfig.neoforge.get())
+                }
+            }
         }
 
         runs {
