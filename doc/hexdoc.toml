@@ -20,7 +20,7 @@ export_dir = "src/hexdoc_hextemplate/_export/generated"
 
 [template]
 # TODO: change this to point to your actual mod icon
-icon = "icon.png"
+icon = "{$_common.src}/main/resources/assets/hextemplate/icon.png"
 include = [
     "hextemplate",
     "hexcasting",
@@ -38,7 +38,7 @@ show_landing_text = false
 _pattern_regex = { "!Raw"='make\(\s*"(?P<name>[a-zA-Z0-9_/]+)"\s*,\s*HexDir\.(?P<startdir>\w+)\s*,\s*"(?P<signature>[aqweds]+)"\s*,\s*(?P<action>\w+)' }
 
 [[extra.hexcasting.pattern_stubs]]
-path = "{$_common.src}/main/kotlin/com/example/hextemplate/registry/HexTemplateActions.kt"
+path = "{$_common.src}/main/kotlin/io/github/example/hextemplate/registry/HexTemplateActions.kt"
 regex = "{^_pattern_regex}"
 
 # source paths

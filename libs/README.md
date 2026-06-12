@@ -1,1 +1,1 @@
-Put jars for dependencies that aren't on a maven in this folder.
+You can put JAR files here for dependencies which aren't published to CurseForge/Modrinth or available on any Maven.

@@ -14,6 +14,9 @@ in pkgs.mkShell {
   buildInputs = with pkgs; [
     uv
     python312
+    python312Packages.pydantic
+    python312Packages.pydantic-core
+    python312Packages.copier
     git
     jetbrains.jdk-21
   ] ++ libs;

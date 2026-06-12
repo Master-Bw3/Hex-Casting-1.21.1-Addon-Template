@@ -79,10 +79,13 @@ cloche {
     metadata {
         modId = "hextemplate"
         name = "Hex Template"
-        description = "Put a description here"
+        description = "Hex Template addon for Hex Casting"
         license = "MIT"
 
-        author("Me")
+        author("Example")
+        url = "https://example.github.io/hextemplate"
+        sources = "https://github.com/Example/hextemplate"
+        issues = "https://github.com/Example/hextemplate/issues"
     }
 
     common {
@@ -134,15 +137,15 @@ cloche {
 
         metadata {
             entrypoint("main") {
-                value = "com.example.hextemplate.FabricHexTemplate"
+                value = "io.github.example.hextemplate.FabricHexTemplate"
                 adapter = "kotlin"
             }
             entrypoint("client") {
-                value = "com.example.hextemplate.client.FabricHexTemplateClient"
+                value = "io.github.example.hextemplate.client.FabricHexTemplateClient"
                 adapter = "kotlin"
             }
             entrypoint("fabric-datagen") {
-                value = "com.example.hextemplate.datagen.FabricHexTemplateDatagen"
+                value = "io.github.example.hextemplate.datagen.FabricHexTemplateDatagen"
                 adapter = "kotlin"
             }
         }
@@ -214,19 +217,9 @@ yamlang {
 }
 
 // json5 support
-// https://github.com/gamma-delta/PKPCPBP/blob/786194a590/src/main/java/at/petrak/pkpcpbp/PKSubprojPlugin.java#L84
-tasks.withType<ProcessResources>().configureEach {
-    outputs.upToDateWhen { false }
-
-    filesMatching(listOf("assets/**/*.flatten.json5", "data/**/*.flatten.json5")) {
-        path = path.replace(".flatten.json5", ".json")
-        filter<FlatteningJson5Transmogrifier>()
-    }
-
-    filesMatching(listOf("assets/**/*.json5", "data/**/*.json5")) {
-        path = path.replace(".json5", ".json")
-        filter<Json5Transmogrifier>()
-    }
+pkJson5 {
+    autoProcessJson5 = true
+    autoProcessJson5Flattening = true
 }
 
 

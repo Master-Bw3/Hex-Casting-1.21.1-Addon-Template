@@ -1,5 +1,4 @@
 from importlib.resources import Package
-from typing_extensions import override
 
 from hexdoc.plugin import (
     HookReturn,
@@ -8,25 +7,26 @@ from hexdoc.plugin import (
     ModPluginWithBook,
     hookimpl,
 )
+from typing_extensions import override
 
 import hexdoc_hextemplate
 
-from .__gradle_version__ import FULL_VERSION, GRADLE_VERSION
+from .__gradle_version__ import FULL_VERSION, MINECRAFT_VERSION, MOD_ID, MOD_VERSION
 from .__version__ import PY_VERSION
 
 
-class HextemplatePlugin(ModPluginImpl):
+class HexTemplatePlugin(ModPluginImpl):
     @staticmethod
     @hookimpl
     def hexdoc_mod_plugin(branch: str) -> ModPlugin:
-        return HextemplateModPlugin(branch=branch)
+        return HexTemplateModPlugin(branch=branch)
 
 
-class HextemplateModPlugin(ModPluginWithBook):
+class HexTemplateModPlugin(ModPluginWithBook):
     @property
     @override
     def modid(self) -> str:
-        return "hextemplate"
+        return MOD_ID
 
     @property
     @override
@@ -36,7 +36,7 @@ class HextemplateModPlugin(ModPluginWithBook):
     @property
     @override
     def mod_version(self) -> str:
-        return GRADLE_VERSION
+        return f"{MOD_VERSION}+{MINECRAFT_VERSION}"
 
     @property
     @override
@@ -51,7 +51,7 @@ class HextemplateModPlugin(ModPluginWithBook):
         from ._export import generated
 
         return generated
-    
+
     @override
     def jinja_template_root(self) -> tuple[Package, str]:
         return hexdoc_hextemplate, "_templates"

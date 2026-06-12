@@ -1,2 +1,5 @@
-# Hex-Casting-1.21.1-Addon-Template
-Hex Casting 1.21.1 Addon Template using Cloche and Forgified Fabric api for multiloader support
+# Hex Template
+
+[![powered by hexdoc](https://img.shields.io/endpoint?url=https://hexxy.media/api/v0/badge/hexdoc?label=1)](https://github.com/hexdoc-dev/hexdoc)
+
+Hex Template addon for Hex Casting

@@ -9,7 +9,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hexdoc-hextemplate"
-description = "Hex Template addon for Hex Casting."
+description = "Hex Template addon for Hex Casting"
 readme = "doc/README.md"
 authors = [
     { name="Example" },
@@ -32,6 +32,7 @@ scheme = "gradle"
 source = "gradle-properties"
 py-path = "doc/src/hexdoc_hextemplate/__version__.py"
 key = "modVersion"
+gradle-version-regex = { regex='^(.+?)(-.+)?$', repl='\1.{minecraftVersion}\2' }
 
 # Python dependencies
 
@@ -47,6 +48,9 @@ key = "modVersion"
 dev = [
     "ruff",
 ]
+
+[tool.uv.extra-build-dependencies]
+hexdoc-hextemplate = ["pydantic_core"]
 
 # directory inclusion
 
@@ -66,7 +70,7 @@ sources = ["doc/src"]
 # hexdoc entry points
 
 [project.entry-points.hexdoc]
-hextemplate = "hexdoc_hextemplate._hooks:HextemplatePlugin"
+hextemplate = "hexdoc_hextemplate._hooks:HexTemplatePlugin"
 
 # linting
 

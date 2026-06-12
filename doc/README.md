@@ -2,7 +2,7 @@
 
 Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for Hex Template.
 
-Hex Template addon for Hex Casting.
+Hex Template addon for Hex Casting
 
 ## Version scheme
 
@@ -30,6 +30,7 @@ source .venv/bin/activate  # everything else
 ## Usage
 
 For local testing, create a file called `.env` in the repo root following this template:
+
 ```sh
 GITHUB_REPOSITORY=Example/hextemplate
 GITHUB_SHA=main

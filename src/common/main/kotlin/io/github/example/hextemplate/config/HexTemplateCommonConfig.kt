@@ -1,0 +1,11 @@
+package io.github.example.hextemplate.config
+
+import io.github.example.hextemplate.HexTemplate
+import me.fzzyhmstrs.fzzy_config.config.Config
+
+// guide: https://moddedmc.wiki/en/project/fzzy-config/latest/docs/config-design/New-Configs#2-config-creation
+class HexTemplateCommonConfig : Config(HexTemplate.id("common_config")) {
+
+    var testValue = 1.5
+
+}
