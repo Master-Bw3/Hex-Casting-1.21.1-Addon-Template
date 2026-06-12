@@ -213,6 +213,7 @@ yamlang {
     owolibRichTranslations = true
 }
 
+// json5 support
 // https://github.com/gamma-delta/PKPCPBP/blob/786194a590/src/main/java/at/petrak/pkpcpbp/PKSubprojPlugin.java#L84
 tasks.withType<ProcessResources>().configureEach {
     outputs.upToDateWhen { false }
