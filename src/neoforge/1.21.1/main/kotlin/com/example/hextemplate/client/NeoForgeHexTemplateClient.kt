@@ -9,8 +9,5 @@ object NeoForgeHexTemplateClient {
     @Suppress("UNUSED_PARAMETER")
     fun init(event: FMLClientSetupEvent) {
         HexTemplateClient.init()
-//        LOADING_CONTEXT.registerExtensionPoint(IConfigScreenFactory::class.java) {
-//            IConfigScreenFactory { _, parent -> HexTemplateClient.getConfigScreen(parent) }
-//        }
     }
 }

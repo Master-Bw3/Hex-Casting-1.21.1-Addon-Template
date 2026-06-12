@@ -5,10 +5,10 @@ import me.fzzyhmstrs.fzzy_config.api.RegisterType
 
 object HexTemplateConfigs {
     //instance of your config loaded from file and automatically registered to the SyncedConfigRegistry and ClientConfigRegistry using the getId() method
-    var commonConfig = ConfigApi.registerAndLoadConfig(::HexTemplateClientConfig)
+    val COMMON_CONFIG = ConfigApi.registerAndLoadConfig(::HexTemplateCommonConfig)
 
     //adding the registerType, you can register a config as client-only. No syncing will occur. Useful for client-only mods.
-    var clientConfig = ConfigApi.registerAndLoadConfig(::HexTemplateCommonConfig, RegisterType.CLIENT)
+    val CLIENT_CONFIG = ConfigApi.registerAndLoadConfig(::HexTemplateClientConfig, RegisterType.CLIENT)
 
     fun init() {}
 }
