@@ -1,0 +1,25 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# https://copier.readthedocs.io/en/stable/updating/#never-change-the-answers-file-manually
+_commit: v0.2.0
+_src_path: gh:hexdoc-dev/hexdoc-hexcasting-template
+advanced: true
+capitalize_platforms: false
+classname: Hextemplate
+generate_vscode: true
+github_repo: hextemplate
+github_user: Example
+gradle_deps_type: gradle/libs.versions.toml
+gradle_hex_version_key: hexcasting
+gradle_mod_version_key: modVersion
+main_branch: main
+minecraft_version: 1.20.1
+minecraft_version_in_mod_version: false
+mod_description: Hex Template addon for Hex Casting.
+mod_display_name: Hex Template
+modid: hextemplate
+multiloader: true
+package_name: hexdoc-hextemplate
+package_slug: hexdoc_hextemplate
+pages_url: https://example.github.io/hextemplate
+pattern_registry_path: main/java/io/github/example/hextemplate/registry/Patterns.java
+source_url: https://github.com/Example/hextemplate
