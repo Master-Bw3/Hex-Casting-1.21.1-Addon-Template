@@ -2,7 +2,7 @@
 
 [![powered by hexdoc](https://img.shields.io/endpoint?url=https://hexxy.media/api/v0/badge/hexdoc?label=1)](https://github.com/hexdoc-dev/hexdoc)
 
-This is an up-to-date, minimal, opinionated template for starting a **multiloader, Kotlin-based** Hex Casting addon on 1.21.1 with Cloche. Includes all necessary dependencies on both Neoforge and Fabric loaders, plus some demo bits. 
+This is an up-to-date, opinionated template for starting a **multiloader, Kotlin-based** Hex Casting addon on 1.21.1 with Cloche. Includes all necessary dependencies on both Neoforge and Fabric loaders, plus some demo bits. 
 
 This template is based on [HexDummy](https://github.com/FallingColors/hexdummy#usage) by FallingColors
 
