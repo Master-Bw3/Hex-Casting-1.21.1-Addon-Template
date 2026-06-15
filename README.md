@@ -41,19 +41,6 @@ This template is based on [HexDummy](https://github.com/FallingColors/hexdummy#u
    git push
    ```
 6. Follow the [hexdoc setup instructions](https://hexdoc.hexxy.media/docs/guides/deployment/github-pages) for GitHub Pages.
-7. Set up the release workflow:
-   1. In your GitHub repository settings, create two new environments called `pypi` and `curseforge-modrinth`.
-   2. Add the following environment secrets (**not** environment variables) to the `curseforge-modrinth` environment:
-      - `CURSEFORGE_TOKEN`: Generate a new [CurseForge API token](https://authors-old.curseforge.com/account/api-tokens).
-      - `MODRINTH_TOKEN`: Generate a new [Modrinth PAT](https://modrinth.com/settings/pats) with the `Create versions` scope.
-   3. [Create a PyPI pending publisher](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/) with the following settings:
-      - PyPI Project Name: The `project.name` value in your `pyproject.toml` (eg. `hexdoc-hexcasting`)
-      - Owner: Your GitHub username
-      - Repository name: Your GitHub repository name
-      - Workflow name: `release.yml`
-      - Environment name: `pypi`
-   4. If you'd like to publish your mod to https://maven.hexxy.media, [follow these instructions](https://gist.github.com/object-Object/f9988135bec5cef653c668712954f429) to set it up.
-   5. When your mod is ready, [manually trigger a release](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow) through the Actions tab on GitHub.
 
 ## Resources
 
@@ -82,9 +69,6 @@ As a consequence, this repository by itself is *not* a working Minecraft mod - i
 - Local JAR dependency files: `libs/`
 - Maven repositories for Gradle plugins: `settings.gradle.kts`
 
-### Why is the release workflow triggered manually?
-
-Minecraft mod releases tend to be brittle. Hex Template's release workflow includes separate inputs for each platform your mod is released to, so if some of them fail but others succeed, you can manually fix and re-release just the failing parts, rather than having to push a new tag or commit and release everything again.
 
 ### What's a (ModName)Registrar?
 
