@@ -13,10 +13,10 @@ in pkgs.mkShell {
 
   buildInputs = with pkgs; [
     uv
-    python312
-    python312Packages.copier-template-tester
-    python312Packages.pydantic
-    python312Packages.pydantic-core
+    python313
+    python313Packages.copier-template-tester
+    python313Packages.pydantic
+    python313Packages.pydantic-core
     copier
     git
     jetbrains.jdk-21

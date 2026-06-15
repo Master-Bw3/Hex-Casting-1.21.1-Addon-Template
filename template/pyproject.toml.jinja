@@ -16,10 +16,7 @@ authors = [
 ]
 keywords = ["hexdoc"]
 requires-python = ">=3.12"
-dynamic = ["version", "optional-dependencies"]
-dependencies = [
-    "hexdoc-hexcasting~=0.11.3.1.0",
-]
+dynamic = ["version", "dependencies", "optional-dependencies"]
 
 [project.urls]
 Homepage = "{{ homepage_url }}"
@@ -39,11 +36,11 @@ gradle-version-regex = { regex='^(.+?)(-.+)?$', repl='\1.{minecraftVersion}\2' }
 # Python dependencies
 
 # required
-#[tool.hatch.metadata.hooks.version-catalog]
-#path = "libs.versions.toml"
-#dependencies = [
-#    { package="hexdoc-hexcasting", op="~=", py-version="1.0", key="hexcasting" },
-#]
+[tool.hatch.metadata.hooks.version-catalog]
+path = "libs.versions.toml"
+dependencies = [
+    { package="hexdoc-hexcasting", op="~=", py-version="1.0", key="hexdoc-hexcasting" },
+]
 
 # dev-only
 [dependency-groups]

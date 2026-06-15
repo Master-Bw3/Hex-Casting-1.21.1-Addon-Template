@@ -52,6 +52,10 @@ modPublish = "0.5.1"
 yamlang = "1.5.0"
 pkpcpbp = "0.2.0-pre-95"
 
+# hexdoc
+hexdoc-hexcasting = "0.11.3"
+
+
 [bundles]
 cardinalComponents = ["cardinalComponents-base", "cardinalComponents-entity", "cardinalComponents-item", "cardinalComponents-block"]
 hexcasting-fabric = ["hexcasting-fabric", "paucal-fabric", "patchouli-fabric", "clothConfig-fabric", "inline-fabric", "accessories-fabric"]
