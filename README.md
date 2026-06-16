@@ -46,7 +46,7 @@ This template is based on [HexDummy](https://github.com/FallingColors/hexdummy#u
 
 See the following branches for up-to-date example projects generated using Hex Template:
 
-- TODO
+- https://github.com/Master-Bw3/Hex-Casting-1.21.1-Addon-Template/tree/example
 
 The following repository contains an example of a project generated using Hex Template, including GitHub Actions workflow runs and a hexdoc web book:
 
@@ -86,7 +86,7 @@ val REGISTERED_THING = register("registered_thing") { ThingConstructor("paramete
 
 The value returned by `register` is an [`Entry<V>`](https://github.com/object-Object/HexDummyExample/blob/a7d8d5b58bd018a62456e4653fe46ba3eb22bc69/common/src/main/kotlin/io/github/objectobject/hexdummyexample/registry/HexdummyexampleRegistrar.kt#L50). You can use this to access the registered thing's id (`.id`) or ResourceKey (`.key`), and when you're sure registration has finished, the actual registered instance (`.value`).
 
-For a more concrete example, the template comes with an [example for registering patterns](TODO https://github.com/object-Object/HexDummyExample/blob/a7d8d5b58bd018a62456e4653fe46ba3eb22bc69/common/src/main/kotlin/io/github/objectobject/hexdummyexample/registry/HexdummyexampleActions.kt), and HexDebug has [several more examples](https://github.com/object-Object/HexDebug/tree/5db5f78f5489863e2c20a3df472571a984877b7d/Common/src/main/kotlin/gay/object/hexdebug/registry) for various types of registries.
+For a more concrete example, the template comes with an [example for registering patterns](https://github.com/Master-Bw3/Hex-Casting-1.21.1-Addon-Template/blob/example/src/common/main/kotlin/io/github/example/hextemplate/registry/HexTemplateActions.kt), and HexDebug has [several more examples](https://github.com/object-Object/HexDebug/tree/5db5f78f5489863e2c20a3df472571a984877b7d/Common/src/main/kotlin/gay/object/hexdebug/registry) for various types of registries.
 
 ## TODO
 
