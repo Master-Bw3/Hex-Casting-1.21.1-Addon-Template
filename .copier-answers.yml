@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# https://copier.readthedocs.io/en/stable/updating/#never-change-the-answers-file-manually
+_commit: HEAD
+_src_path: ../../Hex-Casting-1.21.1-Addon-Template
+advanced: false
+description: Hex Template addon for Hex Casting
+display_name: Hex Template
+github_repo: hextemplate
+github_user: Example
+java_package: io.github.example.hextemplate
+minecraft_version_in_mod_version: true
+mit_license: true
+mod_version: 1.0.0
+modid: hextemplate

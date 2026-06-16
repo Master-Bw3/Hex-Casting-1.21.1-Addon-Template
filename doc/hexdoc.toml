@@ -19,7 +19,6 @@ resource_dirs = [
 export_dir = "src/hexdoc_hextemplate/_export/generated"
 
 [template]
-# TODO: change this to point to your actual mod icon
 icon = "{$_common.src}/main/resources/assets/hextemplate/icon.png"
 include = [
     "hextemplate",

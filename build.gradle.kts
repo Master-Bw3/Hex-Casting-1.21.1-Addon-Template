@@ -101,7 +101,7 @@ cloche {
             // the parts of mods that are the same in all sourceSets
             // will automatically be available in the common sourceSet
         }
-
+        
         metadata {
             dependencies {
                 dependency {
