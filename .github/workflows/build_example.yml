@@ -1,0 +1,30 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+    - '.github/**'
+    branches:
+    - copier
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Perform Checkout
+      uses: actions/checkout@v2
+      
+    - uses: cachix/install-nix-action@v31
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+
+    - name: Build template
+      run: nix-build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./result/.ctt/default
+        publish_branch: example
