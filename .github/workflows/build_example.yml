@@ -33,9 +33,9 @@ jobs:
             ! -name result \
             -exec rm -rf {} +
 
-          rm ./result
-
           cp -r result/default/. .
+
+          rm result
 
           git add -A
           git commit -m "Deploy ${GITHUB_SHA}" || exit 0
