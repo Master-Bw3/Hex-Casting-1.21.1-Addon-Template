@@ -37,8 +37,8 @@ jobs:
             -exec rm -rf {} +
 
           cp -r result/default/. .
-
           rm result
+          mv .github .github-example
 
           git add -A
           git commit -m "Deploy ${GITHUB_SHA}" || exit 0
