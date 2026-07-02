@@ -15,7 +15,7 @@
     },
     "ruff.organizeImports": true,
     "ruff.lint.ignore": ["I"], // format on save is enabled, so don't show the squiggles
-    "python.languageServer": "Pylance",
+    "python.languageServer": "None",
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.packageIndexDepths": [
         {"name": "hexdoc", "depth": 3},

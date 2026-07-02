@@ -192,3 +192,6 @@ cython_debug/
 .ctt/
 
 result
+
+.envrc
+.direnv/
