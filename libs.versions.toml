@@ -13,7 +13,7 @@ kotlin-forge  = "5.11.0"
 
 minecraft = "1.21.1"
 
-cloche = "0.18.15"
+cloche = "0.19.7"
 
 fabric-loader         = "0.19.3"
 fabric-api            = "0.116.7"
@@ -23,7 +23,7 @@ neoforge = "21.1.233"
 
 # mods
 
-hexcasting        = "0.12.0-devel-pre-9"
+hexcasting        = "0.12.0-devel-pre-17"
 architectury      = "[13.0, 14.0["
 inline            = "1.21.1-1.2.2"
 caelus-neoforge   = "7.0.1+1.21.1"

@@ -117,7 +117,6 @@ cloche {
         minecraftVersion = libs.versions.minecraft
 
         mixins.from(file("src/fabric/1.21.1/hextemplate-fabric.mixins.json"))
-        datagenDirectory = file("src/common/main/generated")
         includedClient()
         data()
 
@@ -183,7 +182,6 @@ cloche {
         minecraftVersion = libs.versions.minecraft
 
         mixins.from(file("src/neoforge/1.21.1/hextemplate-neoforge.mixins.json"))
-        datagenDirectory = file("src/common/main/generated")
         data()
 
         mappings {
@@ -247,20 +245,17 @@ yamlang {
     inputDir = "assets/hextemplate/lang"
     owolibRichTranslations = true
 }
+tasks.named("runFabric1211Data").configure {
+    dependsOn(tasks.named("yamlangConvertFabric1211Resources"))
+}
+tasks.named("runNeoforge1211Data").configure {
+    dependsOn(tasks.named("yamlangConvertNeoforge1211Resources"))
+}
 
 // json5 support
 pkJson5 {
     autoProcessJson5 = true
     autoProcessJson5Flattening = true
-}
-
-
-// workaround for https://github.com/terrarium-earth/cloche/issues/150
-tasks.named("runFabric1211Data") {
-    enabled = false
-}
-tasks.named("prepareFabric1211DataRun") {
-    dependsOn(tasks.named("runNeoforge1211Data"))
 }
 
 // disable the default compile tasks so the build task works properly
