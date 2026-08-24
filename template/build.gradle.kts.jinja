@@ -171,6 +171,7 @@ cloche {
         runs {
             client {
                 jvmArguments.add("-XX:+AllowEnhancedClassRedefinition")
+                args("--username", "{{ github_user }}")
             }
             server()
             data()
@@ -219,6 +220,7 @@ cloche {
         runs {
             client {
                 jvmArguments.add("-XX:+AllowEnhancedClassRedefinition")
+                args("--username", "{{ github_user }}")
             }
             server()
             data()
