@@ -19,3 +19,10 @@ classname = "HexServer"
 display_name = "Hex Server"
 mod_version = "1.0.0"
 
+[output.".ctt/different_minecraft_username"]
+modid = "hextemplate"
+github_user = "Example"
+classname = "HexTemplate"
+display_name = "Hex Template"
+minecraft_username = "Different"
+mod_version = "1.0.0"
