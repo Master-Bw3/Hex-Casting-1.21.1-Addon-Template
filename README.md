@@ -88,6 +88,12 @@ The value returned by `register` is an [`Entry<V>`](https://github.com/object-Ob
 
 For a more concrete example, the template comes with an [example for registering patterns](https://github.com/Master-Bw3/Hex-Casting-1.21.1-Addon-Template/blob/example/src/common/main/kotlin/io/github/example/hextemplate/registry/HexTemplateActions.kt), and HexDebug has [several more examples](https://github.com/object-Object/HexDebug/tree/5db5f78f5489863e2c20a3df472571a984877b7d/Common/src/main/kotlin/gay/object/hexdebug/registry) for various types of registries.
 
+### Starting Minecraft fails with `Unrecognized VM option: AllowEnhancedClassRedefinition`
+
+Make sure you have configured a JVM runtime that supports DCEVM, like the JetBrains Runtime.
+
+If you are using IntelliJ, go to `File | Project Structure | Project` and choose JetBrains Runtime 21 as your SDK. Also make sure that Gradle is configured to use your project SDK: Go to `File | Settings | Build, Execution, Deployment | Build Tools | Gradle` and choose `Project SDK` for the Gradle JVM.
+
 ## TODO
 
 - Set up Mod Publish
