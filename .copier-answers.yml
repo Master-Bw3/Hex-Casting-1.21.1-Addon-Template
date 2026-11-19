@@ -8,6 +8,7 @@ display_name: Hex Template
 github_repo: hextemplate
 github_user: Example
 java_package: io.github.example.hextemplate
+minecraft_username: Example
 minecraft_version_in_mod_version: true
 mit_license: true
 mod_version: 1.0.0

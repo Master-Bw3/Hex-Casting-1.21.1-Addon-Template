@@ -1,4 +1,4 @@
-#!/nix/store/zh1ijdhb6gng1509b1zrilb6xlzx60j6-bash-5.3p9/bin/sh
+#!/nix/store/hasnvc0j36gg6qrdsfcx7yivx3c2bpqr-bash-5.3p20/bin/sh
 
 #
 # Copyright © 2015-2021 the original authors.
