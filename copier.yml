@@ -45,6 +45,11 @@ java_package:
     {{- validators.not_empty(java_package) -}}
     {{- validators.java_package(java_package) -}}
 
+minecraft_username:
+  type: str
+  help: Minecraft Username
+  default: "{{github_user|replace('-', '_')}}"
+
 mod_version:
   type: str
   help: Initial mod version
