@@ -18,7 +18,7 @@ in pkgs.stdenv.mkDerivation {
     python313Packages.copier-template-tester
     python313Packages.pydantic
     python313Packages.pydantic-core
-    copier
+    python313Packages.copier
     git
   ] ++ libs;
 
